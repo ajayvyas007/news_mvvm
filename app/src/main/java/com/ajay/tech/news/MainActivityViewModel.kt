@@ -39,6 +39,8 @@ class MainActivityViewModel(schedulerProvider: SchedulerProvider, networkHelper:
                         data.postValue(null)
                     }
                 ))
+        } else{
+            checkInternetConnectionWithMessage()
         }
 
     }

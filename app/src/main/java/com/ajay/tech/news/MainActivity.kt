@@ -39,6 +39,14 @@ class MainActivity : BaseActivity<MainActivityViewModel>() {
     override fun setUpObservers() {
         super.setUpObservers()
 
+        mainActivityViewModel.messageString.observe(this, Observer {
+            it.data?.run { showMessage(this) }
+        })
+
+        mainActivityViewModel.messageStringId.observe(this, Observer {
+            it.data?.run { showMessage(this) }
+        })
+
         mainActivityViewModel.data.observe(this, Observer {
             it?.let {
                 adapter = PostAdapter(it)

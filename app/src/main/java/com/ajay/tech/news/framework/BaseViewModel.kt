@@ -46,10 +46,10 @@ abstract class BaseViewModel( val networkHelper: NetworkHelper): ViewModel() {
     }
 
     protected fun handleNetworkError(throwable: Throwable?){
-        /*throwable?.let {
+        throwable?.let {
             networkHelper?.let {
                 networkHelper?.castToNetworkError(throwable).run {
-                when(0*//*status*//*)
+                when(status)
                 {
                     -1 -> messageStringId.postValue(com.ajay.tech.news.utils.common.Resource.error(R.string.network_default_error))
 
@@ -65,7 +65,7 @@ abstract class BaseViewModel( val networkHelper: NetworkHelper): ViewModel() {
                 }
             }
             }
-        }*/
+        }
     }
 
     abstract fun onCreate()
